@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./assets/css/hs-mega-menu.min.css">
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="./assets/css/theme.css">
+  <title>JSantos Investimentos</title>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-light navbar-show-hide">
+    <div class="container">
+      <nav class="js-mega-menu navbar-nav-wrap">
+        <!-- Default Logo -->
+        <a class="navbar-brand" href="index.php" aria-label="Front">
+          <img class="navbar-brand-logo logo" src="./assets/img/logo.png" alt="Logo">
+        </a>
+        <!-- End Default Logo -->
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-default">
+            <i class="bi-list"></i>
+          </span>
+          <span class="navbar-toggler-toggled">
+            <i class="bi-x"></i>
+          </span>
+        </button>
+        <!-- End Toggler -->
+        
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav" id="navbarNavDropdownNav">
+            <li class="nav-item">
+              <a class="btn-transition text-muted active" href="#content">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn-transition text-muted" href="#quem_somos">Quem somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn-transition text-muted" href="#solucoes">Soluções</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn-transition text-muted" href="#depoimentos">Depoimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn-transition text-muted" href="#parceiros">Parceiros</a>
+            </li>
+            <!-- Button -->
+            <li class="nav-item" style="width: 151px;">
+              <a class="btn btn-primary btn-transition" href="#contato" style="font-size: 14px; width: 100%; font-weight: 500;">CONTATO</a>
+            </li>
+            <!-- End Button -->
+          </ul>
+        </div>
+        <!-- End Collapse -->
+      </nav>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <main id="content" role="main">
+    <!-- ========== SWIPER SLIDER ========== -->
+    <div>
+      <div class="js-swiper-gallery-2 swiper">
+        <div class="swiper-wrapper">
+          <!-- Slider -->
+          <div class="swiper-slide bg-img-center content-space-3 content-space-md-5" style="background-image: url(./assets/img/header-1.png);">
+            <div class="container">
+              <div class="w-lg-30 mx-lg-auto">
+                <div class="mb-5" style="max-width: 511px;">
+                  <h2 class="text-white">Simulação de<br/>empréstimo e crédito.</h2>
+                  <p class="text-white" style="font-size: 18px; font-weight: 400;">Faça uma simulação de empréstimo pessoal grátis e encontre as ofertas que cabem no seu bolso. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slider -->
+
+          <!-- Slider -->
+          <div class="swiper-slide bg-img-center content-space-3 content-space-md-5" style="background-image: url(./assets/img/header-2.jpg);">
+            <div class="container">
+              <div class="w-lg-30 mx-lg-auto">
+                <div class="mb-5" style="max-width: 511px;">
+                  <h2 class="text-dark mb-3">Tempo é Dinheiro<br/>Não perca tempo</h2>
+                  <p class="text-dark" style="font-size: 18px; font-weight: 400;">Nós temos as melhores soluções de crédito PF/PJ. Entre em contato agora para entender o melhor caminho para o seu crescimento financeiro!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Slider -->
+        </div>
+
+        <!-- Swiper Pagination -->
+        <div class="js-swiper-gallery-2-pagination swiper-pagination swiper-pagination-light position-absolute bottom-0 start-0 mb-5"></div>
+        
+      </div>
+      <!-- End Slider -->
+      <div class="bg-dark" style="width: 100%; height: 116px;margin: 0;margin-top: -3px;">
+        <form id="simulation-form">
+          <div class="row bg-white rounded p-3 simulation-form align-items-center">
+            <div class="col">
+              <input class="form-control form-control-lg" type="text" name="nome_simulation" id="nome_simulation" placeholder="Nome Completo" style="font-size: 13px;">
+            </div>
+            <div class="col">
+              <input class="form-control form-control-lg" type="tel" name="tel_simulation" id="tel_simulation" placeholder="Telefone" style="font-size: 13px;">
+            </div>
+            <div class="col d-flex flex-column">
+              <span style="font-size: 11px;">Qual sua renda mensal?</span>
+              <input class="mt-1 mb-1" id="renda_range" type="range" value="25000" step="500" min="1000" max="100000"/>
+              <span class="text-center output_range" id="renda_range_out">R$ 25.000,00</span>
+            </div>
+            <div class="col d-flex flex-column">
+              <span style="font-size: 11px;">De quanto você precisa?</span>
+              <input class="mt-1 mb-1" id="needed_range" type="range" value="25000" step="500" min="1000" max="100000"/>
+              <span class="text-center output_range" id="needed_range_out">R$ 25.000,00</span>
+            </div>
+            <div class="col d-flex flex-column">
+              <span style="font-size: 11px;">Em quantos meses quer pagar?</span>
+              <input class="mt-1 mb-1" id="meses_range" type="range" value="12" step="1" min="1" max="48" />
+              <span class="text-center output_range" id="meses_range_out">12 meses</span>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary simulate-btn">SIMULAR</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- ========== END SWIPER SLIDER ========== -->
+
+    <!-- Quem somos -->
+    <div class="container content-space-2 content-space-lg-3" id="quem_somos">
+      <div class="row justify-content-lg-between">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="./assets/img/quem_somos.png" alt="Quem somos" style="width: 100%;" />
+        </div>
+        <!-- End Col -->
+
+        <div class="col-lg-6">
+          <h4 class="text-dark">Somos especialistas em soluções financeiras e crédito inteligente.</h4>
+          <p class="text-dark">
+            Potencializamos os resultados ajudando pessoas físicas e empresariais no processo de reestruturação financeira e geração de receita.
+          </p>
+          <!-- Icon Block -->
+          <div class="card card-transition" style="width: 324px;">
+            <div class="card-body">
+              <div class="d-flex" style="
+              align-items: baseline;
+              ">
+                <div>
+                  <span class="text-primary" style="font-size: 25px; font-weight: 700;">+</span>
+                </div>
+
+                <div class="flex-grow-1 ms-2">
+                  <h3 class="card-title text-dark" style="margin: 0;">R$25 milhões</h4>
+                  <p class="card-text text-body">em crédito para nossos clientes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+          <!-- Icon Block -->
+          <div class="card card-transition mt-4" style="width: 324px;">
+            <div class="card-body">
+              <div class="d-flex" style="
+              align-items: baseline;
+              ">
+                <div>
+                  <span class="text-primary" style="font-size: 25px; font-weight: 700;">+</span>
+                </div>
+
+                <div class="flex-grow-1 ms-2">
+                  <h3 class="card-title text-dark" style="margin: 0;">40 parceiros</h4>
+                  <p class="card-text text-body">garantindo a nossa qualidade</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+
+      <div class="row justify-content-lg-between" style="margin-top: 100px;">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h4 class="text-dark">Sabemos que o início da jornada é sempre mais difícil.</h4>
+          <p class="text-dark">
+            Porque você não vê grandes resultados, pensando nisso surgiu a J. Santos Investimentos, viemos para auxiliar na jornada da sua criação de riqueza.
+          </p>
+
+          <img src="./assets/img/quem_somos_2.png" alt="Quem somos" width="250" />
+        </div>
+        <!-- End Col -->
+
+        <div class="col-lg-6">
+
+          <div class="row">
+            <!-- Icon Block -->
+            <div class="card card-transition justify-content-center align-items-center" style="
+                width: 73px;
+                height: 73px;
+            ">
+                <img src="./assets/img/missao.png" alt="Missao" />
+             
+            </div>
+            <!-- End Icon Block -->
+
+            <div class="col" style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            ">
+              <h5 class="text-dark" style="margin: 0; font-size: 24px;">Missão</h5>
+              <p style="margin: 0;">Acreditamos que investir é para todos</p>
+            </div>
+
+          </div>
+          <!-- End Row -->
+
+          <div class="row" style="margin-top: 60px;">
+            <!-- Icon Block -->
+            <div class="card card-transition justify-content-center align-items-center" style="
+                width: 73px;
+                height: 73px;
+            ">
+                <img src="./assets/img/visao.png" alt="Visao" />
+             
+            </div>
+            <!-- End Icon Block -->
+
+            <div class="col" style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            ">
+              <h5 class="text-dark" style="margin: 0; font-size: 24px;">Visão</h5>
+              <p style="margin: 0;">Conectar pessoas e negócios sempre estimulando o desenvolvimento do investidor</p>
+            </div>
+
+          </div>
+          <!-- End Row -->
+
+          <div class="row" style="margin-top: 60px;">
+            <!-- Icon Block -->
+            <div class="card card-transition justify-content-center align-items-center" style="
+                width: 73px;
+                height: 73px;
+            ">
+                <img src="./assets/img/valores.png" alt="Valores" />
+             
+            </div>
+            <!-- End Icon Block -->
+
+            <div class="col" style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            ">
+              <h5 class="text-dark" style="margin: 0;  font-size: 24px;">Valores</h5>
+              <p style="margin: 0;">Compromisso com os resultados, revisão constante de acordo com o perfil do investidor</p>
+            </div>
+
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Col -->
+
+      </div>
+      <!-- End Row -->
+
+    </div>
+    <!-- End Quem somos -->
+
+    <!-- Soluções -->
+    <div class="content-space-2 content-space-lg-3 bg-dark solucoes" id="solucoes">
+      <div class="container">
+
+        <div class="row justify-content-lg-between">
+          <div class="col-md-7">
+            <h4 class="text-light">Somos um escritório de soluções financeiras especialista em crédito inteligente. </h4>
+            <p class="text-light" style="font-size: 16px; font-weight: 400; line-height: 21.6px;">Jovens, mas com a experiência de um grupo que opera o ciclo completo de originação e securitização de crédito.​</p>
+          </div>
+          <div class="col">
+            <img src="./assets/img/solucoes_div.png" alt="" class="solucoes_img_absolute"/>
+          </div>
+        </div>
+        <!-- End row -->
+        <div class="row justify-content-lg-between performance-cards" style="margin-top: 70px;">
+          <div class="col">
+            <a 
+              target="_blank" 
+              href="https://wa.me/5541991687189?text=Olá!%20Tenho%20interesse%20nos%20serviços%20da%20Jsantos." 
+              class="card card-transition card-bg-dark"
+            >
+              <div class="card-body">
+                <div class="d-flex" style="align-items: center;">
+                  <div class="col-md-2" style="display: flex; justify-content: center;">
+                    <img src="./assets/img/solucoes_performance.png" alt="Performance">
+                  </div>
+  
+                  <div class="flex-grow-1 ms-2">
+                    <h5 class="card-title text-white" style="margin: 0;">Performance Empresarial</h5>
+                    <p class="card-text text-body">Potencializamos os resultados da sua empresa, ajustando o posicionamento de mercado, métodos, processos e fluxo de operação.</p>
+                  </div>
+
+                </div>
+              </div>
+            </a>
+            <!-- End Card -->
+            <a 
+              target="_blank" 
+              href="https://wa.me/5541991687189?text=Olá!%20Tenho%20interesse%20nos%20serviços%20da%20Jsantos." 
+              class="card card-transition card-bg-dark"
+              style="margin-top: 32px;"
+            >
+              <div class="card-body">
+                <div class="d-flex" style="align-items: center;">
+                  <div class="col-md-2" style="display: flex; justify-content: center;">
+                    <img src="./assets/img/solucoes_consultoria.png" alt="Consultoria">
+                  </div>
+  
+                  <div class="flex-grow-1 ms-2">
+                    <h5 class="card-title text-white" style="margin: 0;">Consultoria Multidisciplinar​</h5>
+                    <p class="card-text text-body">Reestruturação Financeira, Societária, Tributária, Fiscal e Franchising. Nossa área de Consultoria atua com foco na constante melhoria de desempenho.</p>
+                  </div>
+
+                </div>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <div class="col">
+            <a 
+              target="_blank" 
+              href="https://wa.me/5541991687189?text=Olá!%20Tenho%20interesse%20nos%20serviços%20da%20Jsantos." 
+              class="card card-transition card-bg-dark"
+            >
+              <div class="card-body">
+                <div class="d-flex" style="align-items: center;">
+                  <div class="col-md-2" style="display: flex; justify-content: center;">
+                    <img src="./assets/img/solucoes_reestruturacao.png" alt="Reestruturação">
+                  </div>
+  
+                  <div class="flex-grow-1 ms-2">
+                    <h5 class="card-title text-white" style="margin: 0;">Reestruturação Financeira​</h5>
+                    <p class="card-text text-body">Ajudamos empresários no processo de reestruturação financeira e geração de receita, com captação de crédito, gestão de processos ou investidores.</p>
+                  </div>
+
+                </div>
+              </div>
+            </a>
+            <!-- End Card -->
+            <a 
+              target="_blank" 
+              href="https://wa.me/5541991687189?text=Olá!%20Tenho%20interesse%20nos%20serviços%20da%20Jsantos." 
+              class="card card-transition card-bg-dark" 
+              style="margin-top: 32px;"
+            >
+              <div class="card-body">
+                <div class="d-flex" style="align-items: center;">
+                  <div class="col-md-2" style="display: flex; justify-content: center;">
+                    <img src="./assets/img/solucoes_planejamento.png" alt="Planejamento">
+                  </div>
+  
+                  <div class="flex-grow-1 ms-2">
+                    <h5 class="card-title text-white" style="margin: 0;">Planejamento Estratégico​</h5>
+                    <p class="card-text text-body">Um método validado para ajudar empresas a alocar processos e recursos, estabilizá-la e direcioná-la e devolvê-la mais eficiente no mercado de atuação.</p>
+                  </div>
+
+                </div>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+        </div>
+        <!-- End row -->
+
+      </div>
+      <!-- End container -->
+    </div>
+    <!-- End Soluções -->
+
+    <!-- Depoimentos -->
+    <div class="content-space-2 content-space-lg-3" id="depoimentos">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col"></div>
+          <div class="col text-center" style="width: 434px;">
+            <h4 style="color: #14213D;">DEPOIMENTOS</h4>
+            <!-- SLIDER -->
+
+            <div class="js-swiper-depoimentos swiper">
+              <div class="swiper-wrapper">
+                <!-- Slider -->
+                <div class="swiper-slide">
+                  <p style="font-size: 14px; font-weight: 400; line-height: 21px; color: #797E88; margin-top: 29px; margin-bottom: 34px;">
+                    Sou uber, através de uma conversa rápida com o Jullian em uma viagem que estava fazendo, ele me mostrou como eu poderia deixar de trabalhar, trocando horas por dinheiro e ter a minha própria empresa.
+                    Através de ferramentas simples de investimentos baixos eu consegui ter a minha própria frota de veículos, e hoje eu alugo carros e motos para eventos.
+                  </p>
+                  <div>
+                    <h5 style="color: #14213D; margin: 0;">Eduardo Louzada</h5>
+                    <!-- <p style="margin: 0; color: #14213D;">Lorem Ipsum</p> -->
+                  </div>
+                </div>
+                <!-- Slider -->
+
+                <!-- Slider -->
+                <div class="swiper-slide">
+                  <p style="font-size: 14px; font-weight: 400; line-height: 21px; color: #797E88; margin-top: 29px; margin-bottom: 34px;">
+                    Sou empresário do Agronegócio produtor de reflorestamento, quando precisei da J SANTOS para reestruturação do meu negócio, fui super bem atendido e eles entregaram além do prometido.
+                  </p>
+                  <div>
+                    <h5 style="color: #14213D; margin: 0;">Helio Araujo</h5>
+                    <!-- <p style="margin: 0; color: #14213D;">Lorem Ipsum</p> -->
+                  </div>
+                </div>
+                <!-- Slider -->
+
+                <!-- Slider -->
+                <div class="swiper-slide">
+                  <p style="font-size: 14px; font-weight: 400; line-height: 21px; color: #797E88; margin-top: 29px; margin-bottom: 34px;">
+                    Quando eu precisei de crédito, eles foram super assertivos, trouxeram soluções inteligentes e me mostraram que produtos como consórcios que eu achava que não eram mais utilizados porém se forem bem aplicados de forma inteligentes, são produtos que trazem grandes retornos para alavancagem financeira.
+                  </p>
+                  <div>
+                    <h5 style="color: #14213D; margin: 0;">Felipe Caulin</h5>
+                    <!-- <p style="margin: 0; color: #14213D;">Lorem Ipsum</p> -->
+                  </div>
+                </div>
+                <!-- Slider -->
+
+                <!-- Slider -->
+                <div class="swiper-slide">
+                  <p style="font-size: 14px; font-weight: 400; line-height: 21px; color: #797E88; margin-top: 29px; margin-bottom: 34px;">
+                    Conheço a J Santos há 4 anos, desde então tenho uma carteira de investimentos com eles.
+                    Além do suporte e incentivo, para estudo,  eles são sempre solícitos quando necessito de ajuda.
+                    É um time que 'pegou na minha mão' me ajudou a dar o primeiro passo da minha independência financeira.
+                  </p>
+                  <div>
+                    <h5 style="color: #14213D; margin: 0;">Mariana Comarin</h5>
+                    <!-- <p style="margin: 0; color: #14213D;">Lorem Ipsum</p> -->
+                  </div>
+                </div>
+                <!-- Slider -->
+      
+              </div>
+      
+              
+            </div>
+            
+            <div class="js-swiper-depoimentos-pagination swiper-pagination swiper-pagination-dark mb-5"></div>
+
+            <!-- END SLIDER -->
+            
+          </div>
+          <div class="col">
+            <img src="./assets/img/depoimentos.png" width="320" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img src="./assets/img/depoimentos_1.png" alt="depoimentos" width="320" />
+          </div>
+          <div class="col">
+            <img src="./assets/img/depoimentos_2.png" alt="depoimentos" width="320" />
+          </div>
+          <div class="col">
+            <img src="./assets/img/depoimentos_3.png" alt="depoimentos" width="320" />
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          
+          <div class="d-flex justify-content-center " style="width: 100%">
+            <a href="https://wa.me/5541991687189?text=Olá!%20Tenho%20interesse%20nos%20serviços%20da%20Jsantos." class="btn btn-primary" target="_blank">Quero ser um cliente também!</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Depoimentos -->
+
+    <!-- Parceiros -->
+    <div class="content-space-2 content-space-lg-3" id="parceiros" style="background-color: #F2F2F3;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div style="max-width: 511px;" class="text-center"> 
+            <h3 class="text-dark" style="font-size: 40px; line-height:44px; font-weight: 700;">Parceiros Comerciais</h3>
+            <p class="text-dark" style="font-size: 18px; line-height: 21.6px; font-weight: 400;">Abaixo você conhece quem nos acompanha em todo processo na J. Investimentos</p>
+          </div>
+        </div>
+        <!-- end row -->
+        <div class="row mt-5">
+          <!-- Swiper -->
+          <div class="js-swiper-freemode swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/bb.webp" alt="Image Description">
+              </div>
+
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/bs2.webp" alt="Image Description">
+              </div>
+
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/btg.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/bv.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/c6.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/cashme.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/creditas.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/ourinvest.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/porto-seguro.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/serasa.webp" alt="Image Description">
+              </div>
+              <div class="swiper-slide">
+                <img class="img-fluid" src="./assets/img/Parceiros/stone.webp" alt="Image Description">
+              </div>
+
+            </div>
+
+          </div>
+          <!-- End Swiper -->
+
+          <!-- Swiper Pagination -->
+          <div class="js-swiper-freemode-pagination swiper-pagination"></div>
+        </div>
+        <!-- end row -->
+      </div>
+    </div>
+    <!-- End Parceiros -->
+
+    <!-- Fale conosco -->
+    <div class="content-space-2 content-space-lg-3" id="contato" style="">
+
+      <div class="container custom-form">
+        <div class="d-flex contact-form">
+          <div>
+            <img src="./assets/img/fale_conosco_bg.png" alt="." width="591" height="460" class="rounded" />
+          </div>
+          <div class="rounded bg-white" style="width: 100%;">
+            <div class="fale_conosco_div">
+              <h2 class="text-dark">Fale Conosco</h2>
+              <form id="message-form">
+                <div class="row">
+                  <div class="col">
+                    <input class="form-control form-control-lg" type="text" name="nome" id="nome" placeholder="Nome">
+                  </div>
+                </div>
+                <div class="row flex-column-mobile">
+                  <div class="col">
+                    <input class="form-control form-control-lg" type="tel" name="telefone" id="telefone" placeholder="Telefone">
+                  </div>
+                  <div class="col">
+                    <input class="form-control form-control-lg" type="email" name="email" id="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="row mt-5">
+                  <div class="col">
+                    <textarea class="form-control form-control-lg" id="mensagem" placeholder="Mensagem" rows="4" cols="50" style="resize: none;"></textarea>
+                  </div>
+                </div>
+                <div class="row mt-5">
+                  <div class="col d-flex" style="flex-direction: row-reverse; margin-right: 40px;">
+                    <button class="btn btn-primary" style="font-size: 14px; width:192px; height:48px;">ENVIAR MENSAGEM</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- End Fale conosco -->
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-dark d-flex flex-column justify-content-end" style="height: 492px;">
+
+    <div class="container">
+      <div class="row justify-content-center p-5">
+        <div class="col"></div>
+        <div class="col d-flex align-items-center" style="flex-direction: column;">
+          <img src="./assets/img/logo.png" alt="logo" width="140" />
+          <p style="margin-top: 29px; font-size: 13px;" class="text-center text-light" style="font-size: 13px;">Rua Dr. Manoel Pedro, 539 - CJ. 206<br/>Cabral, Curitiba - PR</p>
+          <p class="text-center text-light" style="font-size: 13px;">(41) 99168-7189</p>
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="row p-5 align-items-center" style="border-top: 1px solid #797E88">
+        <div class="col">
+          <p style="margin: 0; font-size: 13px;" class="text-light">Todos os direitos reservados.</p>
+        </div>
+        <div class="col" style="display: flex;justify-content: flex-end;">
+          <!-- Socials -->
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a target="_blank" href="https://m.facebook.com/solutionshermes?_rdr">
+                <img src="./assets/img/facebook_icon.png" alt="f" />
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="https://www.instagram.com/hermes_solutions/?utm_medium=copy_link">
+                <img src="./assets/img/instagram_icon.png" alt="i" />
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="https://www.linkedin.com/company/hermes-solutions">
+                <img src="./assets/img/linkedin_icon.png" alt="li" />
+              </a>
+            </li>
+          </ul>
+          <!-- End Socials -->
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+   data-hs-go-to-options='{
+     "offsetTop": 700,
+     "position": {
+       "init": {
+         "right": "2rem"
+       },
+       "show": {
+         "bottom": "2rem"
+       },
+       "hide": {
+         "bottom": "-2rem"
+       }
+     }
+   }'>
+    <i class="arrow up"></i>
+  </a>
+  
+  <!-- JS Global Compulsory @@deleteLine:build -->
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+  <script src="./assets/js/hs-header.min.js"></script>
+  <script src="./assets/js/hs-mega-menu.min.js"></script>
+  <script src="./assets/js/hs-show-animation.min.js"></script>
+  <script src="./assets/js/hs-scrollspy.min.js"></script>
+  <script src="./assets/js/hs-go-to.min.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF SWIPER
+      // =======================================================
+      var swiper2 = new Swiper('.js-swiper-gallery-2',{
+        slidesPerView: 1,
+        pagination: {
+          el: '.js-swiper-gallery-2-pagination',
+          clickable: true,
+        },
+      });
+      var swiper2 = new Swiper('.js-swiper-depoimentos',{
+        slidesPerView: 1,
+        pagination: {
+          el: '.js-swiper-depoimentos-pagination',
+          clickable: true,
+        },
+      });
+
+      var freemode = new Swiper('.js-swiper-freemode', {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          breakpoints: {
+            640: {
+              slidesPerView: 6,
+              spaceBetween: 30,
+            }
+          },
+          freeMode: true,
+          pagination: {
+            el: '.js-swiper-freemode-pagination',
+            clickable: true,
+          },
+      })
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      new HSMegaMenu('.js-mega-menu', {
+          desktop: {
+            position: 'left'
+          }
+        })
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+
+
+      // SCROLLSPY
+      // =======================================================
+      new bootstrap.ScrollSpy(document.body, {
+        target: '#navbarNavDropdownNav'
+      })
+
+      new HSScrollspy('#navbarNavDropdown', {
+        breakpoint: 'lg',
+        scrollOffset: -10
+      })
+
+      function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+        try {
+          return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount)
+        } catch (e) {
+          console.error(e)
+        }
+      };
+
+      const rangeInputs = document.querySelectorAll('input[type="range"]')
+
+      function handleInputChange(e) {
+        let target = e.target
+        const output = document.getElementById(e.target.id+"_out")
+        if (e.target.type !== 'range') {
+          target = document.getElementById('range')
+        } 
+        const min = target.min
+        const max = target.max
+        const val = target.value
+        
+        target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+        const retorno = e.target.id.includes('meses') ? `${val} ${val>1? "meses":"mês"}` : new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
+        output.innerHTML = retorno;
+      }
+
+      rangeInputs.forEach(input => {
+        input.addEventListener('input', handleInputChange)
+      })
+
+      document.getElementById("simulation-form").addEventListener('submit', async (e) => {
+        e.preventDefault('')
+        const name = document.getElementById("nome_simulation")
+        const phone = document.getElementById("tel_simulation")
+        const income = document.getElementById("renda_range")
+        const request = document.getElementById("needed_range")
+        const qtd_meses = document.getElementById("meses_range")
+
+        console.log(name.value, phone.value, income.value, request.value, qtd_meses.value)
+
+        const mensagem = `Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20simula%C3%A7%C3%A3o%20de%20cr%C3%A9dito.%0ANome%3A%20${name.value}%20%0ATelefone%3A%20${phone.value}%0ARenda%3A%20${formatMoney(income.value)}%0APreciso%20de%3A%20${formatMoney(request.value)}%0APretendo%20pagar%20em%3A%20${qtd_meses.value}%20meses`;
+
+        window.open(`https://wa.me/5541991687189?text=${mensagem}`, '_blank');
+        
+        const response = await fetch("save_simulations.php", {
+          method: "post",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            name: name.value,
+            phone: phone.value,
+            income: income.value,
+            request: request.value,
+            qtd_meses: qtd_meses.value,
+          })
+        })
+
+        name.value = ""
+        phone.value = ""
+
+      })
+      document.getElementById("message-form").addEventListener('submit', async (e) => {
+        e.preventDefault('')
+        const name = document.getElementById("nome")
+        const phone = document.getElementById("telefone")
+        const email = document.getElementById("email")
+        const mensagem = document.getElementById("mensagem")
+        
+        const response = await fetch("save_contacts.php", {
+          method: "post",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            mensagem: mensagem.value,
+          })
+        })
+
+        name.value = ""
+        phone.value = ""
+        email.value = ""
+        mensagem.value = ""
+
+      })
+
+    })()
+  </script>
+</body>
+</html>
